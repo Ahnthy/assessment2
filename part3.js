@@ -39,7 +39,7 @@ class Student {
             }
         }
         
-        let elementString = this.generateList (this.shortList);
+        let elementString = this.generateList (shortList);
         let rootElement = document.getElementById(this.rootId);
         rootElement.innerHTML = elementString;
     }
