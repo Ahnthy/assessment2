@@ -30,3 +30,46 @@ function addClick () {
     let qual = "-";
     studentList.add (id, fname, lname, qual);
 }
+
+let indexNum = -1;
+
+document.getElementById("init-list").addEventListener("click", function select (event) {
+    let eTarget = event.target;
+    console.log(eTarget);
+
+    indexNum = parseInt(eTarget.getAttribute("index-id"));
+    console.log(initStudents[indexNum])
+
+    let formElements = document.getElementById("form-update").elements;
+    formElements["id"].value = initStudents[indexNum].studentID;
+    formElements["fname"].value = initStudents[indexNum].firstName;
+    formElements["lname"].value = initStudents[indexNum].lastName;
+    formElements["qual"].value = initStudents[indexNum].qualification;
+})
+
+function updateClick () {
+    let formElements = document.getElementById("form-update").elements;
+    let index = indexNum;
+    let fname = formElements["fname"].value;
+    let lname = formElements["lname"].value;
+    let qual = formElements["qual"].value;
+    if (index == -1) {
+        window.alert("Select a student to update!")
+    } else {
+        studentList.update (index, fname, lname, qual);
+    }
+}
+
+function deleteClick () {
+    let formElements = document.getElementById("form-delete").elements;
+    let id = formElements["id"].value;
+    studentList.delete(id);
+}
+
+function ascClick() {
+    studentList.sortAsc();
+}
+
+function descClick() {
+    studentList.sortDesc();
+}

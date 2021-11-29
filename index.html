@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <h1>Hogwart's Students</h1>
     <link rel="stylesheet" href="./mystyle.css">
 </head>
 <body>
-    <div class="section">
+    <div class="header">
+        <img src="./Hogwarts_logo.png" alt="logo" height="140">
+        <h1>Hogwarts Students</h1>
+    </div>
+
+    <div class="section1">
         <h2>Student List</h2>
         <div class="control">
             <form id=form-list-control>
                 <button type="button" name="btn-refresh" onclick="refreshClick();">Refresh</button>
-                <input type="text" placeholder="Student ID..." name="search-string">
+                <input type="text" placeholder="Enter student ID..." name="search-string">
                 <button type="button" name="btn-search" onclick="searchClick();">Search</button>
+                <button type="button" name="btn-desc" onclick="descClick();" style="float: right;">9 to 1</button>
+                <button type="button" name="btn-asc" onclick="ascClick();" style="float: right;">1 to 9</button>
             </form>
         </div>
 
@@ -20,16 +26,40 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section2">
         <h2>Add a Student</h2>
         <form id="form-add">
-            <label>Student ID: </label>
-            <input type="text" placeholder="Student ID..." name="id"><br>
-            <label>First Name: </label>
-            <input type="text" placeholder="First name..." name="fname"><br>
-            <label>Last Name: </label>
-            <input type="text" placeholder="Last name..." name="lname"><br>
+            <label>Student ID : </label>
+            <input type="text" placeholder="Enter student ID..." name="id"><br>
+            <label>First Name : </label>
+            <input type="text" placeholder="Enter first name..." name="fname"><br>
+            <label>Last Name : </label>
+            <input type="text" placeholder="Enter last name..." name="lname"><br>
             <button type="button" name="submit" onclick="addClick();">Add</button>
+        </form>
+    </div>
+
+    <div class="section3">
+        <h2>Update a Student</h2>
+        <form id="form-update">
+            <label>Student ID : </label>
+            <input type="text" placeholder="Select a student to update..." name="id" disabled><br>
+            <label>First Name : </label>
+            <input type="text" placeholder="Enter first name..." name="fname"><br>
+            <label>Last Name : </label>
+            <input type="text" placeholder="Enter last name..." name="lname"><br>
+            <label>Qualification : </label>
+            <input type="text" placeholder="Enter qualification..." name="qual"><br>
+            <button type="button" name="submit" onclick="updateClick();">Update</button>
+        </form>
+    </div>
+
+    <div class="section4">
+        <h2>Delete a Student</h2>
+        <form id="form-delete">
+            <label>Student ID : </label>
+            <input type="text" placeholder="Enter student ID..." name="id"><br>
+            <button type="button" name="submit" onclick="deleteClick();">Delete</button>
         </form>
     </div>
 
