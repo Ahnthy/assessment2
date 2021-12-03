@@ -16,6 +16,22 @@ function refreshClick () {
     studentList.refresh ();
 }
 
+function reset () {
+    let formAddElements = document.getElementById("form-add").elements;
+    formAddElements["id"].value = "";
+    formAddElements["fname"].value = "";
+    formAddElements["lname"].value = "";
+
+    let formUpdateElements = document.getElementById("form-update").elements;
+    formUpdateElements["id"].value = "";
+    formUpdateElements["fname"].value = "";
+    formUpdateElements["lname"].value = "";
+    formUpdateElements["qual"].value = "";
+
+    let formDeleteElements = document.getElementById("form-delete").elements;
+    formDeleteElements["id"].value = "";
+}
+
 function searchClick () {
     let formElements = document.getElementById("form-list-control").elements;
     let id = formElements["search-string"].value;
@@ -29,6 +45,7 @@ function addClick () {
     let lname = formElements["lname"].value;
     let qual = "-";
     studentList.add (id, fname, lname, qual);
+    reset ()
 }
 
 let indexNum = -1;
@@ -58,12 +75,14 @@ function updateClick () {
     } else {
         studentList.update (index, fname, lname, qual);
     }
+    reset ()
 }
 
 function deleteClick () {
     let formElements = document.getElementById("form-delete").elements;
     let id = formElements["id"].value;
     studentList.delete(id);
+    reset ()
 }
 
 function ascClick() {
