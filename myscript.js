@@ -39,6 +39,7 @@ function searchClick () {
     let formElements = document.getElementById("form-list-control").elements;
     let id = formElements["search-string"].value;
     studentList.searchById (id);
+    reset ()
 }
 
 function addClick () {
