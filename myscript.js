@@ -17,6 +17,9 @@ function refreshClick () {
 }
 
 function reset () {
+    let formSearchElements = document.getElementById("form-list-control").elements;
+    formSearchElements["search-string"].value = "";
+
     let formAddElements = document.getElementById("form-add").elements;
     formAddElements["id"].value = "";
     formAddElements["fname"].value = "";
